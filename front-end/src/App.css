@@ -1,0 +1,150 @@
+#board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  background-color: #1565C0; /* Rich blue background */
+  padding: 10px;
+  gap: 10px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Depth for the grid */
+  width: 80vw; /* Limit the grid size */
+  max-width: 700px; /* Ensure it doesn't grow too large */
+  margin: 20px auto; /* Center the grid */
+}
+
+.side-panel {
+  width: 25%;
+  height: 100%;
+  background-color: #2e198b;
+  color: white;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-left: 16px;
+}
+
+.worker {
+  position: absolute;
+  width: 50%; /* Set desired width */
+  height: 50%; /* Set desired height */
+  top: 50%; /* Adjust vertical position */
+}
+
+.block {
+  position: absolute;
+  width: 28%; /* Set desired width */
+  height: 28%; /* Set desired height */
+  top: 75%;
+}
+
+.cell {
+  position: relative;
+  background: linear-gradient(135deg, #FFFFFF, #E3F2FD); /* Soft gradient */
+  border: 2px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+  border-radius: 6px; /* Rounded corners */
+  aspect-ratio: 1; /* Maintain a perfect square */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center content */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1976D2; /* Blue text for subtle contrast */
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Selected as source */
+.cell.player1 {
+  background: linear-gradient(135deg, #FFE082, #FFD54F); /* Warm yellow gradient */
+  border: 3px solid #FFA000;
+  color: #BF360C;
+  box-shadow: 0 4px 8px rgba(255, 160, 0, 0.5);
+}
+
+/* Selected as target */
+.cell.player2 {
+  background: linear-gradient(135deg, #B3E5FC, #81D4FA); /* Cool blue gradient */
+  border: 3px solid #0288D1;
+  color: #01579B;
+  box-shadow: 0 4px 8px rgba(2, 136, 209, 0.5);
+}
+
+.cell:hover,
+.cell.player1:hover,
+.cell.player2:hover {
+  transform: scale(1.05); /* Interactive pop-up effect */
+  /*background-color: #BBDEFB; /* Softer blue on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle hover shadow */
+}
+
+#bottombar {
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #E3F2FD;
+  border-top: 2px solid #BBDEFB;
+  padding: 5px 20px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#instructions {
+  height: auto;
+  padding: 10px;
+  margin: 10px auto;
+  background-color: #FFFFFF;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bolder ;
+  font-family: 'Roboto', sans-serif;
+  color: #37474F;
+  border: 2px solid #B0BEC5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 60%; /* Smaller and centered */
+}
+
+#bottombar button {
+  width: 48%; /* Small margin between buttons */
+  padding: 8px 0;
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #1976D2, #1565C0); /* Gradient */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#bottombar button:hover {
+  background-color: #0D47A1;
+  transform: scale(1.05);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #E3F2FD, #90CAF9); /* Elegant gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.playable {
+  background-color: #FF5252;
+  color: #FFFFFF;
+  border: 2px solid #D32F2F;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.playable:hover {
+  background-color: #FF1744;
+  transform: scale(1.1); /* Interactive pop-up effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
