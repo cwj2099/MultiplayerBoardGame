@@ -1,5 +1,5 @@
 # This is a software enginering school assignment
-I deleted all the keywords in the project thus this would not be found by other student taking that course to reference
+I deleted all the keywords in the project thus this words not be found by other student taking that course to reference
 
 # How to play
 in front-end, do npm install, then npm start to run the front end
